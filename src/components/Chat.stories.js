@@ -14,6 +14,27 @@ export default {
       type: 'image',
       url: design,
     },
+    backgrounds: {
+      default: 'default',
+      values: [
+        {
+          name: 'default',
+          value: '#FAEFE3',
+        },
+        {
+          name: 'black',
+          value: '#000000',
+        },
+        {
+          name: 'white',
+          value: '#ffffff',
+        },
+        {
+          name: 'grey',
+          value: '#999999',
+        },
+      ],
+    },
   },
 };
 
