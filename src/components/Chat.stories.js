@@ -42,7 +42,7 @@ const Story = (args) => <Chat {...args} />;
 
 export const Basic = Story.bind({});
 Basic.args = {
-  avatar: require('../avatar.png'),
+  avatar: '/avatar.png',
   username: 'Emily Dougrer',
   usertitle: 'Developer',
   copy: `Hi there. 👋 We use Boards to share initial goals and ideas.`,
