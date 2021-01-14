@@ -42,5 +42,10 @@ const Story = (args) => <Chat {...args} />;
 
 export const Basic = Story.bind({});
 Basic.args = {
-  label: 'Chat',
+  avatar: require('../avatar.png'),
+  username: 'Emily Dougrer',
+  usertitle: 'Developer',
+  copy: `Hi there. 👋 We use Boards to share initial goals and ideas.`,
+  inputPlaceholder: 'Type your message...',
+  buttonLabel: 'Send',
 };

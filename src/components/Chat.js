@@ -114,10 +114,10 @@ export const Chat = (props) => {
     <MainContainer>
       <TopContainer>
         <UserContainer>
-          <Avatar src={require('../avatar.png')} alt="Emily Dougrer" />
+          <Avatar src={props.avatar} alt="Emily Dougrer" />
           <FlexColContainer>
-            <UserName>Emily Dougrer</UserName>
-            <UserTitle>Developer</UserTitle>
+            <UserName>{props.username}</UserName>
+            <UserTitle>{props.usertitle}</UserTitle>
           </FlexColContainer>
           <Close>
             <svg
@@ -135,13 +135,7 @@ export const Chat = (props) => {
             </svg>
           </Close>
         </UserContainer>
-        <Copy>
-          Hi there.{' '}
-          <span role="img" aria-label="Waving Hand">
-            👋
-          </span>{' '}
-          We use Boards to share initial goals and ideas.
-        </Copy>
+        <Copy>{props.copy}</Copy>
       </TopContainer>
       <BottomContainer>
         <Form>
