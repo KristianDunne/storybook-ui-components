@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const MainContainer = styled.main`
@@ -111,9 +111,17 @@ const Button = styled.button`
   background: none;
   outline: none;
   border: none;
+  cursor: pointer;
 `;
 
 export const Chat = (props) => {
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.onSubmit();
+  };
+
   return (
     <MainContainer>
       <TopContainer background={props.topContainerBackground} color={props.topContainerColor}>
@@ -123,7 +131,7 @@ export const Chat = (props) => {
             <UserName>{props.username}</UserName>
             <UserTitle>{props.usertitle}</UserTitle>
           </FlexColContainer>
-          <Close>
+          <Close onClick={props.onClose}>
             <svg
               width="13"
               height="13"
@@ -142,14 +150,17 @@ export const Chat = (props) => {
         <Copy>{props.copy}</Copy>
       </TopContainer>
       <BottomContainer background={props.bottomContainerBackground}>
-        <Form>
+        <Form onSubmit={(e) => handleSubmit(e)}>
           <Input
             type="text"
             placeholder={props.inputPlaceholder}
             color={props.inputColor}
             placeholderColor={props.inputPlaceholderColor}
+            onChange={(e) => setMessage(e.target.value)}
           ></Input>
-          <Button color={props.buttonColor}>{props.buttonLabel}</Button>
+          <Button color={props.buttonColor} onClick={() => props.onSend(message)} type="submit">
+            {props.buttonLabel}
+          </Button>
         </Form>
       </BottomContainer>
     </MainContainer>

@@ -55,4 +55,7 @@ Basic.args = {
   topContainerColor: '',
   bottomContainerBackground: '',
   closeIconColor: '',
+  onClose: () => {},
+  onSend: (message) => {},
+  onSubmit: (e) => {},
 };
