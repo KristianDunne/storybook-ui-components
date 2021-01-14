@@ -47,5 +47,12 @@ Basic.args = {
   usertitle: 'Developer',
   copy: `Hi there. 👋 We use Boards to share initial goals and ideas.`,
   inputPlaceholder: 'Type your message...',
+  inputColor: '',
+  inputPlaceholderColor: '',
   buttonLabel: 'Send',
+  buttonColor: '',
+  topContainerBackground: '',
+  topContainerColor: '',
+  bottomContainerBackground: '',
+  closeIconColor: '',
 };
