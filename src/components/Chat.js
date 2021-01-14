@@ -11,7 +11,7 @@ const MainContainer = styled.main`
   word-break: break-word;
 `;
 
-const TopContainer = styled.main`
+const TopContainer = styled.div`
   flex-direction: column;
   padding: 25px 32px 0 32px;
   background: ${(props) => props.background || '#4643d3'};
@@ -22,13 +22,13 @@ const UserContainer = styled.div`
   display: flex;
 `;
 
-const BottomContainer = styled.main`
+const BottomContainer = styled.div`
   background: ${(props) => props.background || '#ffffff'};
   padding: 18px 32px 18px 32px;
   color: ${(props) => props.color || '#ffffff'};
 `;
 
-const FlexColContainer = styled.main`
+const FlexColContainer = styled.div`
   flex-direction: column;
 `;
 
