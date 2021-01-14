@@ -99,6 +99,7 @@ const Input = styled.input`
   :-ms-input-placeholder {
     color: ${(props) => props.placeholderColor || '#afafbd'};
   }
+  background-color: transparent;
 `;
 
 const Button = styled.button`
