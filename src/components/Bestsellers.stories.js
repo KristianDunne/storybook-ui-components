@@ -60,4 +60,5 @@ Basic.args = {
   productBrandColor: '',
   productPriceColor: '',
   productHoverBackground: '',
+  onProductClick: (product) => {},
 };
