@@ -8,7 +8,7 @@ const MainContainer = styled.main`
   border-radius: 24px;
   overflow: hidden;
   word-break: break-word;
-  background-color: #ffffff;
+  background-color: ${(props) => props.backgroundColor || '#ffffff'};
   padding: 32px;
   box-sizing: border-box;
 `;
@@ -22,7 +22,7 @@ const Title = styled.h1`
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
-  color: #12121f;
+  color: ${(props) => props.color || '#12121f'};
   margin: 0;
   margin-bottom: 24px;
 `;
@@ -33,7 +33,7 @@ const ProductContainer = styled.div`
   padding: 13px 18px;
   cursor: pointer;
   &:hover {
-    background: #fef2ee;
+    background: ${(props) => props.hoverBackground || '#fef2ee'};
   }
 `;
 
@@ -52,7 +52,7 @@ const ProductName = styled.h2`
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
-  color: #fe805c;
+  color: ${(props) => props.color || '#fe805c'};
 `;
 
 const ProdcutBrand = styled.p`
@@ -62,7 +62,7 @@ const ProdcutBrand = styled.p`
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.25px;
-  color: #afafbd;
+  color: ${(props) => props.color || '#afafbd'};
 `;
 
 const PriceTag = styled.p`
@@ -74,32 +74,21 @@ const PriceTag = styled.p`
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
-  color: #12121f;
+  color: ${(props) => props.color || '#12121f'};
 `;
-
-const products = [
-  {
-    image: '/product1.svg',
-    name: 'Nike Air Max 270',
-    brand: 'Nike',
-    price: '$195.80',
-  },
-  { image: '/product2.svg', name: 'Nike Air Max 90', brand: 'Nike', price: '$195.80' },
-  { image: '/product3.svg', name: 'Nike Air Max Plus', brand: 'Nike', price: '$195.80' },
-];
 
 export const Bestsellers = (props) => {
   return (
-    <MainContainer>
-      <Title>Bestsellers</Title>
+    <MainContainer backgroundColor={props.containerBackgroundColor}>
+      <Title color={props.titleColor}>Bestsellers</Title>
 
-      {products.map((product) => (
-        <ProductContainer>
+      {props.products.map((product) => (
+        <ProductContainer hoverBackground={props.productHoverBackground}>
           <ProductImage src={product.image}></ProductImage>
           <ProductInfo>
-            <ProductName>{product.name}</ProductName>
-            <ProdcutBrand>{product.brand}</ProdcutBrand>
-            <PriceTag>{product.price}</PriceTag>
+            <ProductName color={props.productNameColor}>{product.name}</ProductName>
+            <ProdcutBrand color={props.productBrandColor}>{product.brand}</ProdcutBrand>
+            <PriceTag color={props.productPriceColor}>{product.price}</PriceTag>
           </ProductInfo>
         </ProductContainer>
       ))}

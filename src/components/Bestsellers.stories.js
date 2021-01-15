@@ -40,7 +40,24 @@ export default {
 
 const Story = (args) => <Bestsellers {...args} />;
 
+const products = [
+  {
+    image: '/product1.svg',
+    name: 'Nike Air Max 270',
+    brand: 'Nike',
+    price: '$195.80',
+  },
+  { image: '/product2.svg', name: 'Nike Air Max 90', brand: 'Nike', price: '$195.80' },
+  { image: '/product3.svg', name: 'Nike Air Max Plus', brand: 'Nike', price: '$195.80' },
+];
+
 export const Basic = Story.bind({});
 Basic.args = {
-  label: 'Bestsellers',
+  products: products,
+  containerBackgroundColor: '',
+  titleColor: '',
+  productNameColor: '',
+  productBrandColor: '',
+  productPriceColor: '',
+  productHoverBackground: '',
 };
