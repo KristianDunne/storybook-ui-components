@@ -82,8 +82,8 @@ export const Bestsellers = (props) => {
     <MainContainer backgroundColor={props.containerBackgroundColor}>
       <Title color={props.titleColor}>Bestsellers</Title>
 
-      {props.products.map((product) => (
-        <ProductContainer hoverBackground={props.productHoverBackground}>
+      {props.products.map((product, index) => (
+        <ProductContainer hoverBackground={props.productHoverBackground} key={index}>
           <ProductImage src={product.image}></ProductImage>
           <ProductInfo>
             <ProductName color={props.productNameColor}>{product.name}</ProductName>
